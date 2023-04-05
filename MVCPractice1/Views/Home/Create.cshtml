@@ -1,0 +1,45 @@
+﻿@model MVCPractice1.models.Passenger
+
+
+<html>
+<head>
+	<style>
+		#form {
+			border-style: double;
+			border-radius: 20px;
+			width: 400px;
+			padding: 10px;
+			margin-left: 400px;
+			margin-top: 50px;
+			padding: 10px 10px 10px 100px;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="form">
+		<h2>Add Passenger</h2>
+		<form asp-controller="Home" asp-action="Create" method="post">
+
+			Name:<br>
+			<input type="text" asp-for="Name" placeholder="Passenger Name"><br><br>
+
+			Gender:<br>
+			<select id="gender" asp-for="Gender" placeholder="Select Gender">
+				<option value="choose">---Select Your Gender---</option>
+				<option value="Male">Male</option>
+				<option value="Female">Female</option>
+				<option value="Other">Other</option>
+			</select> <br><br>
+
+			Age:<br>
+			<input type="text" asp-for="Age" placeholder="Age"><br><br>
+
+			City:<br>
+			<input type="text" asp-for="City" placeholder="Destination"><br><br>
+
+			<input type="submit" value="Add"><br>
+		</form>
+	</div>
+</body>
+</html>
