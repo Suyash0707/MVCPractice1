@@ -26,5 +26,34 @@ namespace MVCPractice1.Controllers
 
             return RedirectToAction("Index");
         }
+		public IActionResult Delete(int seat)
+		{
+            MvcpracticeContext db = new MvcpracticeContext();
+			var passenger = db.Passengers.Find(seat);
+
+			if(passenger != null)
+			{
+				db.Passengers.Remove(passenger);
+				db.SaveChanges();
+			}
+			return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public IActionResult Edit(int seat)
+        {
+            MvcpracticeContext db = new MvcpracticeContext();
+			var passenger = db.Passengers.Find(seat);
+            return View(passenger);
+        }
+        [HttpPost]
+        public IActionResult Edit(Passenger passenger)
+        { 
+            MvcpracticeContext db = new MvcpracticeContext();
+            db.Passengers.Update(passenger);
+            db.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
     }
 }

@@ -1,0 +1,53 @@
+﻿@model MVCPractice1.models.Passenger
+
+
+<html>
+<head>
+	<style>
+		body {
+			background-image: url("https://media.istockphoto.com/id/1295087557/vector/wireframe-of-grand-tour-bus-moving-fast-on-a-dark-blue-background.jpg?s=612x612&w=0&k=20&c=xo2wAbT7MuRYaXWc7pSBclETiHg5ynzwu-iqgVDguDg=");
+			background-repeat: no-repeat;
+			background-size: contain;
+		}
+
+		#form {
+			border-style: double;
+			border-radius: 20px;
+			width: 400px;
+			padding: 10px;
+			margin-left: 700px;
+			margin-top: 50px;
+			padding: 10px 10px 10px 100px;
+			background-color: gainsboro;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="form">
+		<h2>Edit Passenger Details</h2>
+		<form asp-controller="Home" asp-action="Edit" method="post">
+
+			Name:<br>
+			<input type="text" asp-for="Name" placeholder="Passenger Name"><br><br>
+
+			Gender:<br>
+			<select id="gender" asp-for="Gender" placeholder="Select Gender">
+				<option value="choose">---Select Your Gender---</option>
+				<option value="Male">Male</option>
+				<option value="Female">Female</option>
+				<option value="Other">Other</option>
+			</select> <br><br>
+
+			Age:<br>
+			<input type="text" asp-for="Age" placeholder="Age"><br><br>
+
+			City:<br>
+			<input type="text" asp-for="City" placeholder="Destination"><br><br>
+
+			<input type="submit" value="Save Changes" />
+			<input type="reset" value="Reset" />
+		</form>
+	</div>
+</body>
+</html>
